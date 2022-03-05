@@ -3,10 +3,8 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Result from "./Result";
 
 const Main = () => {
-  const renderMultiRoutes = ({ element: Element, paths, ...rest }) =>
-    paths.map((path) => (
-      <Route key={path} path={path} {...rest} element={Element} />
-    ));
+  const renderMultiRoutes = ({ element, paths }) =>
+    paths.map((path) => <Route key={path} path={path} element={element} />);
   return (
     <div>
       <Routes>
