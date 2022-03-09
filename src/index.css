@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**css**/
+
+.search-warper {
+  margin-left: 45px;
+}
+
+.search-warper .form-control {
+  height: 44px;
+  background: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  border-radius: 24px;
+  margin: 0 auto;
+  width: 690px;
+  padding: 0px 24px;
+}
+.search-warper .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.search-warper .form-control:hover {
+  box-shadow: 0 2px 8px 1px rgb(64 60 67 / 24%);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.search-warper .form-group {
+  position: relative;
+}
+
+.search-warper svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  fill: #4285f4;
+}
+
+.dark-light-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+}
