@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDebounce } from "use-debounce";
+import { useResultContext } from "../../context/ResultContextProvider";
 
 const Search = () => {
+  const { setSearchTerm } = useResultContext();
+  const [text, setText] = useState("Elan Mask");
+  const [debouncedValue] = useDebounce(text, 300);
+
+  useEffect(() => {
+    if (debouncedValue) {
+      setSearchTerm(debouncedValue);
+    }
+  }, [debouncedValue]);
+
   return (
     <div className="search-warper">
       <div className="form-group">
-        <input type="text" className="form-control" placeholder="Search..." />
+        <input
+          type="text"
+          className="form-control"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Search..."
+        />
         <a href="#">
           <svg
             focusable="false"
